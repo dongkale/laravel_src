@@ -1,0 +1,28 @@
+version: "3"
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: bible-univ
+    container_name: bible-univ
+    restart: always
+    stdin_open: true
+    tty: true
+    ports:
+      - "3000:80"
+    volumes:
+      - .:/var/www/html/bible-univ
+  db:
+    image: mysql:8.0
+    container_name: mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: laravel
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: laravel
+      MYSQL_PASSWORD: laravel
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - app-network

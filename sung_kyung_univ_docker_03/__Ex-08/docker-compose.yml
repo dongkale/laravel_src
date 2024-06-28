@@ -1,0 +1,14 @@
+version: "3"
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: BibleUniv-Server
+    restart: always
+    stdin_open: true
+    tty: true
+    ports:
+      - "3000:80"
+    volumes:
+      - ./application:/var/www/html/BibleUniv-Server

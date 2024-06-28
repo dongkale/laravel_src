@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="style/style_05-08.css" />
+
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet" />
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>    
+
+<style>
+/*    
+.tableHeaderFixed {
+    width: 100%;
+}
+.tableHeaderFixed thead,
+tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.tableHeaderFixed tbody tr td {
+    vertical-align: middle;
+}
+*/
+/*
+.table tr td {
+    vertical-align: middle;
+}
+
+.tableHeaderFixed tbody {
+    display: block;
+    overflow-y: auto;
+    table-layout: fixed;
+}
+.tableHeaderFixed tbody {
+    max-height: 400px;
+}
+
+tr.tr-hover-class:hover {
+    background: lightgrey !important;
+}
+*/
+
+</style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" style="font-size:25px" href="#">Dashboard</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <div class="d-flex align-items-center">
+                        <span class="fa fa-bars mr-1 ml-2"></span>
+                        <a class="nav-link" href="#" data-menu="memberManagement" style="font-size:20px">메뉴 1</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="d-flex align-items-center">
+                        <span class="fa fa-bars mr-1 ml-2"></span>
+                        <a class="nav-link" href="#" data-menu="memberManagement" style="font-size:20px">메뉴 2</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="d-flex align-items-center">
+                        <span class="fa fa-bars mr-1 ml-2"></span>
+                        <a class="nav-link" href="#" data-menu="memberManagement" style="font-size:20px">메뉴 3</a>
+                    </div>
+                </li>
+            </ul>
+
+            <hr class="d-lg-none" />
+            
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">로그인</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">가입</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid content">
+        <!-- <div class="row"> -->
+        <nav class="col-md-2 d-md-block sidebar collapse mt-3" id="sidebarMenu">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <!-- <li class="nav-item">
+                        <a class="nav-link active" href="#">Dashboard</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <!-- <a class="nav-link" href="#">Menu 1</a> -->
+                        <div class="d-flex align-items-center">
+                            <span class="fa fa-bars mr-1 ml-2"></span>
+                            <a class="nav-link" href="#" data-menu="memberManagement" style="font-size:20px">메뉴 1</a>                    
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <!-- <a class="nav-link" href="#">Menu 2</a> -->
+                        <div class="d-flex align-items-center">
+                            <span class="fa fa-bars mr-1 ml-2"></span>
+                            <a class="nav-link" href="#" data-menu="memberManagement" style="font-size:20px">메뉴 2</a>                    
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <!-- <a class="nav-link" href="#">Menu 3</a> -->
+                        <div class="d-flex align-items-center">
+                            <span class="fa fa-bars mr-1 ml-2"></span>
+                            <a class="nav-link" href="#" data-menu="memberManagement" style="font-size:20px">메뉴 3</a>                    
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 main-content">                
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title 1</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title 2</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title 3</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title 1</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title 2</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title 3</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>                
+            <div class="row" id="id-list">
+                <div class="col-md-8">
+                    <div class="card">                            
+                        <div class="card-body">                   
+                            <div class="table-responsive">
+                                <table class="table table-striped table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Header 1</th>
+                                            <th>Header 2</th>
+                                            <th>Header 3</th>
+                                            <th>Header 4</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- <tr>
+                                            <td>1</td>
+                                            <td>Data 1</td>
+                                            <td>Data 2</td>
+                                            <td>Data 3</td>
+                                            <td>Data 4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Data 1</td>
+                                            <td>Data 2</td>
+                                            <td>Data 3</td>
+                                            <td>Data 4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Data 1</td>
+                                            <td>Data 2</td>
+                                            <td>Data 3</td>
+                                            <td>Data 4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Data 1</td>
+                                            <td>Data 2</td>
+                                            <td>Data 3</td>
+                                            <td>Data 4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Data 1</td>
+                                            <td>Data 2</td>
+                                            <td>Data 3</td>
+                                            <td>Data 4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>Data 1</td>
+                                            <td>Data 2</td>
+                                            <td>Data 3</td>
+                                            <td>Data 4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>Data 1</td>
+                                            <td>Data 2</td>
+                                            <td>Data 3</td>
+                                            <td>Data 4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>Data 1</td>
+                                            <td>Data 2</td>
+                                            <td>Data 3</td>
+                                            <td>Data 4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>Data 1</td>
+                                            <td>Data 2</td>
+                                            <td>Data 3</td>
+                                            <td>Data 4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10</td>
+                                            <td>Data 1</td>
+                                            <td>Data 2</td>
+                                            <td>Data 3</td>
+                                            <td>Data 4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>11</td>
+                                            <td>Data 1</td>
+                                            <td>Data 2</td>
+                                            <td>Data 3</td>
+                                            <td>Data 4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12</td>
+                                            <td>Data 1</td>
+                                            <td>Data 2</td>
+                                            <td>Data 3</td>
+                                            <td>Data 4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>13</td>
+                                            <td>Data 1</td>
+                                            <td>Data 2</td>
+                                            <td>Data 3</td>
+                                            <td>Data 4</td>
+                                        </tr> -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>            
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title 1</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title 2</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title 3</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>                
+
+            <!-- <div class="row" id="member-list">
+                <div class="col-md-12">
+                    <div class="card">                            
+                        <div class="card-body">                                
+                            <table class="table table-borderd table-striped tableHeaderFixed">
+                                <thead>
+                                    <tr align="center">    
+                                        <th width="8%">ID</th>
+                                        <th>이름</th>
+                                        <th width="8%">성별</th> 
+                                        <th>생년월일</th>
+                                        <th width="10%">나이</th>
+                                        <th>휴대폰번호</th>
+                                        <th>사용 횟수</th>
+                                        <th>사용 시간(분)</th>
+                                        <th>생성일</th>
+                                        <th>*</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Data 1</td>
+                                        <td>Data 2</td>
+                                        <td>Data 3</td>
+                                        <td>Data 4</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Data 1</td>
+                                        <td>Data 2</td>
+                                        <td>Data 3</td>
+                                        <td>Data 4</td>
+                                    </tr>
+                                </tbody>
+                            </table>                
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </main>
+        <!-- </div> -->
+    </div>
+</body>
+
+<script>
+
+ $(document).ready( function() {
+    viewList();
+} );   
+
+
+function viewList() {
+    $("#id-list").find("tbody").children().remove();
+    
+    let html = '';
+    for (var i = 1; i < 20; i++) {
+        html += `<tr>`;
+        html += `   <td>${i}</td>`;
+        html += `   <td>Data 1</td>`;
+        html += `   <td>Data 2</td>`;
+        html += `   <td>Data 3</td>`;
+        html += `   <td>Data 4</td>`;
+        html += `</tr>`;       
+    };
+
+    $("#id-list").find("tbody").append(html);
+
+}
+
+
+</script>
+</html>

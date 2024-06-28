@@ -1,0 +1,197 @@
+body {
+	padding-top: 48px; /* Navbar height */
+}
+.content {
+	padding-top: 15px; /* Match Navbar height */
+}
+.sidebar {
+	height: 100vh;
+	position: fixed;
+	top: 48px; /* Navbar height == body.padding-top:48px */
+	left: 0;
+	bottom: 0;
+	padding: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background-color: #f8f9fa;
+	border-right: 1px solid #dee2e6;
+}
+.main-content {
+	margin-left: 250px;
+	padding: 20px;
+}
+
+.navbar-nav.mr-auto {
+	display: none;
+}
+
+.card {
+	margin-bottom: 20px;
+	padding: 15px;
+}
+
+.card:hover {
+	border: 1px solid #007bff;
+}
+
+/* Custom styles */
+/* 
+.tableHeaderFixed {
+    width: 100%;
+}
+.tableHeaderFixed thead,
+tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.tableHeaderFixed tbody tr td {
+    vertical-align: middle;
+}
+
+.table tr td {
+    vertical-align: middle;
+}
+
+.tableHeaderFixed tbody {
+    display: block;
+    overflow-y: auto;
+    table-layout: fixed;
+}
+.tableHeaderFixed tbody {
+    max-height: 400px;
+}
+
+tr.tr-hover-class:hover {
+    background: lightgrey !important;
+} 
+    */
+/* Custom styles */
+
+@media (max-width: 768px) {
+	.sidebar {
+		width: 100%;
+		height: auto;
+		position: relative;
+		top: 0;
+	}
+	.main-content {
+		margin-left: 0;
+	}
+	.navbar-nav.mr-auto {
+		display: block !important;
+		/* display: none; */
+	}
+	.navbar-nav.ml-auto {
+		display: block !important;
+		/* display: none; */
+	}
+	.navbar-nav .nav-item {
+		margin-bottom: 10px;
+	}
+
+	/* Mobile styles */
+	/* .tableHeaderFixed thead {
+		display: none;
+	}
+	.tableHeaderFixed tbody tr {
+		display: block;
+		width: 100%;
+		box-sizing: border-box;
+		border: 1px solid #dee2e6;
+		margin-bottom: 10px;
+		background-color: #fff;
+	}
+	.tableHeaderFixed tbody tr td {
+		display: block;
+		width: 100%;
+		box-sizing: border-box;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+		vertical-align: middle;
+		border-bottom: 1px solid #dee2e6;
+	}
+	.tableHeaderFixed tbody {
+		max-height: none; 
+	} */
+	/* Mobile styles */
+}
+.table-responsive {
+	overflow-y: auto;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.table-responsive thead th {
+	position: sticky;
+	top: 0px;
+	background-color: #fff;
+	z-index: 100;
+}
+.table-responsive tbody tr:hover {
+	background: lightgrey !important;
+}
+.table-responsive thead tr,
+.table-responsive tbody tr {
+	vertical-align: middle;
+	text-align: center;
+}
+
+.table-responsive .table td,
+.table-responsive .table th {
+	border-top: none;
+}
+
+.table-responsive {
+	/* border: 1px solid #dee2e6; */
+	border-top: 1px solid #dee2e6;
+	border-bottom: 1px solid #dee2e6;
+	border-radius: 0.25rem;
+	/* border-top-right-radius: 5px;
+	border-top-left-radius: 5px; */
+}
+
+/* 각각의 테이블에 적용하려면 아래의 코드를 사용하면 된다. */
+.table-responsive {
+	height: 300px;
+}
+
+/* .table-responsive .table thead th {
+	border-bottom: 1px solid red;
+} */
+
+/* table,
+th,
+td {
+	border: 1px solid red;
+} */
+
+/* .table-responsive tbody tr {
+	vertical-align: middle;
+	text-align: center;
+} */
+
+/* .table tr td {
+	vertical-align: middle;
+	text-align: center;
+} */
+
+/* ... */
+
+.table-responsive thead,
+tbody tr {
+	/* display: table; */
+	width: 100%;
+	table-layout: fixed;
+}
+
+.table-responsive tbody {
+	/* overflow-y: auto; */
+	/* max-height: 400px; */
+	/* table-layout: fixed; */
+}
+
+/* .table-responsive tbody tr td {
+	vertical-align: middle;
+} */

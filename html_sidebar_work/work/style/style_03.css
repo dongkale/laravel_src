@@ -1,0 +1,103 @@
+#body-row {
+	margin-left: 0;
+	margin-right: 0;
+}
+#sidebar-container {
+	min-height: 100vh;
+	background-color: #333;
+	padding: 0;
+}
+
+/* Sidebar sizes when expanded and expanded */
+.sidebar-expanded {
+	width: 230px;
+}
+
+.sidebar-collapsed {
+	width: 60px;
+}
+
+/* Menu item*/
+#sidebar-container .list-group a {
+	height: 50px;
+	color: white;
+}
+
+/* Submenu item*/
+#sidebar-container .list-group .sidebar-submenu a {
+	height: 45px;
+	padding-left: 30px;
+}
+.sidebar-submenu {
+	font-size: 0.9rem;
+}
+
+/* Separators */
+.sidebar-separator-title {
+	background-color: #333;
+	height: 35px;
+}
+.sidebar-separator {
+	background-color: #333;
+	height: 25px;
+}
+.logo-separator {
+	background-color: #333;
+	height: 60px;
+}
+
+/* Closed submenu icon */
+#sidebar-container .list-group .list-group-item[aria-expanded='false'] .submenu-icon::after {
+	content: '\f0d7';
+	font-family: 'Font Awesome\ 5 Free';
+	font-weight: 900; /* Fix version 5.0.9 */
+	display: inline;
+	text-align: right;
+	padding-left: 10px;
+}
+/* Opened submenu icon */
+#sidebar-container .list-group .list-group-item[aria-expanded='true'] .submenu-icon::after {
+	content: '\f0da';
+	font-family: 'Font Awesome\ 5 Free';
+	font-weight: 900; /* Fix version 5.0.9 */
+	display: inline;
+	text-align: right;
+	padding-left: 10px;
+}
+
+/* 탑바를 고정시키는 CSS */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030; /* 다른 요소 위에 나타나도록 설정 */
+}
+
+/* 사이드바를 고정시키는 CSS */
+#sidebar-container {
+    position: fixed;
+    top: 55px;
+    left: 0;
+    bottom: 0;
+    /* width: 250px; */ /* 사이드바의 너비 설정 */
+    z-index: 1020; /* 다른 요소 위에 나타나도록 설정 */
+    overflow-y: auto; /* 필요시 스크롤 가능하도록 설정 */
+    transition: width 0.3s; /* 너비 변경시 스무스한 애니메이션 효과 */
+}
+
+/* 메인 콘텐츠를 사이드바와 겹치지 않게 이동시키는 CSS */
+.col {
+	transition: margin-left 0.3s; /* 스무스한 애니메이션 효과 */
+    margin-left: 230px; /* 사이드바의 너비만큼 메인 콘텐츠를 이동 */
+	top: 55px;
+}
+
+/* 사이드바 접힘 상태일 때의 너비 */
+/* .sidebar-collapsed {
+    width: 100px; 
+} */
+
+.card {
+    margin-bottom: 20px;
+    padding: 15px; 
+}
