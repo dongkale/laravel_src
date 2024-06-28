@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\TestController;
 
 /*
@@ -36,6 +37,12 @@ Route::middleware(["logger"])->group(function () {
     Route::get("/dashboard/menu_2", [DashboardController::class, "menu_2"]);
 
     Route::get("/dashboard/setting", [DashboardController::class, "setting"]);
+
+    Route::get("change-password", [ChangePasswordController::class, "index"]);
+    Route::post("change-password", [
+        ChangePasswordController::class,
+        "changePassword",
+    ]);
 });
 
 Auth::routes();

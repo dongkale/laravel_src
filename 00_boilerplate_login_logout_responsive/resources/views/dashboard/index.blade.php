@@ -65,6 +65,9 @@
 <div class="row">
     <div class="col-md-8">
         <div class="card">
+            <div class="card-header" style="font-size:14px">
+                <div style="font-size:20px">사용 목록</div>
+            </div>
             <div class="card-body">
                 <div class="table-responsive" id="id-list">
                     <table class="table table-striped table-sm">
@@ -87,6 +90,9 @@
     </div>
     <div class="col-md-4">
         <div class="card">
+            <div class="card-header" style="font-size:14px">
+                <div style="font-size:20px">사용 목록</div>
+            </div>
             <div class="card-body">
                 <div class="table-responsive" id="id-list-form">
                     <table class="table table-striped table-sm">
