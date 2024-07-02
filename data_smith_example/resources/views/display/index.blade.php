@@ -731,6 +731,44 @@ function clickSnapShot(modelViewId, name) {
     URL.revokeObjectURL(url);
 }
 
+async function viewAssetListAsync(searchKey, offset, limit) {
+    let totalCount = 0;
+
+    await callAPI({
+        method: 'GET',
+        url: '/assetList',
+        data: {
+            "searchKey" : searchKey,
+            "offset": offset,
+            "limit": limit
+        }
+    }).then(function (response) {
+        if (response.result_code == 0) {
+            const arrayAssetList = response.result_data.asset_list;
+
+            if (offset == 1) {
+                $("#asset-list").children().remove();
+            }
+
+            totalCount = arrayAssetList[0].total_count;
+
+            const htmlAssetList = getMakeHtmlAssetList(arrayAssetList);
+            $("#asset-list").append(htmlAssetList);
+
+            initListenerAssetList(arrayAssetList);
+        } else {
+            alert("처리 중 문제가 발생하였습니다.(0)");
+        }
+    }).catch(function (error) {
+        alert("처리 중 문제가 발생하였습니다.(1)");
+        console.log(error);
+    }).finally(function () {
+        ;
+    })
+
+    return totalCount;
+}
+
 function viewAssetList(offset, limit) {
     callAPI({
         method: 'GET',
@@ -814,6 +852,22 @@ function viewPageAssetList(page, pagePerCount, totalCount) {
     TotalCount = viewAssetList(offSet, limit);
 
     console.log(`Page:${page}, PagePerCount:${pagePerCount}, Offset:${offSet}, Limit:${limit}, finalPage:${finalPage}, totalCount:${totalCount}`);
+
+    return page + 1;
+}
+
+async function viewPageAssetListAsync(page, pagePerCount, searchKey) {
+    const __searchValue = $('#searchValue').val();
+    const __searchSelect = $('.custom-select').val();
+
+    const offSet = (page - 1) * pagePerCount;
+    const limit = pagePerCount;
+
+    TotalCount = await viewAssetListAsync(searchKey, offSet, limit);
+
+    const finalPage = Math.floor((TotalCount + (pagePerCount - 1)) / pagePerCount);
+
+    console.log(`Page:${page}, PagePerCount:${pagePerCount}, Offset:${offSet}, Limit:${limit}, finalPage:${finalPage}, TotalCount:${TotalCount}`);
 
     return page + 1;
 }
