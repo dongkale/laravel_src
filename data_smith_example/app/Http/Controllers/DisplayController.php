@@ -338,4 +338,9 @@ class DisplayController extends Controller
             ],
         ]);
     }
+
+    public function test()
+    {
+        return view("display.index-04", []);
+    }
 }

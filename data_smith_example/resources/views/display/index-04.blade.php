@@ -146,7 +146,7 @@
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
 {{-- <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script> --}}
 
-<div class="row">
+{{-- <div class="row">
     <div class="col-md-3">
         <div class="card">
             <div class="card-header" style="font-size:14px">
@@ -157,7 +157,7 @@
             <div class="card-body">
                 <div>
                     <model-viewer style="width: 400px; height: 300px;"
-                                src="http://localhost:3002/__data/image_01.gltf"
+                                src="http://localhost:3003/__data/image_01.gltf"
                                 shadow-intensity="1"
                                 camera-controls
                                 disable-tap
@@ -177,7 +177,7 @@
             <div class="card-body">
                 <div>
                     <model-viewer style="width: 400px; height: 300px;"
-                                src="http://localhost:3002/__data/image_02.gltf"
+                                src="http://localhost:3003/__data/image_02.gltf"
                                 shadow-intensity="1"
                                 camera-controls
                                 disable-tap
@@ -197,7 +197,7 @@
             <div class="card-body">
                 <div>
                     <model-viewer style="width: 400px; height: 300px;"
-                                src="http://localhost:3002/__data/image_03.gltf"
+                                src="http://localhost:3003/__data/image_03.gltf"
                                 shadow-intensity="1"
                                 camera-controls
                                 disable-tap
@@ -217,7 +217,7 @@
             <div class="card-body">
                 <div>
                     <model-viewer style="width: 400px; height: 300px;"
-                                src="http://localhost:3002/__data/image_04.gltf"
+                                src="http://localhost:3003/__data/image_04.gltf"
                                 shadow-intensity="1"
                                 camera-controls
                                 disable-tap
@@ -226,7 +226,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     {{-- <div class="col-md-2">
         <div class="card">
             <div class="card-header" style="font-size:14px">
@@ -307,15 +307,18 @@
 </model-viewer> --}}
 
 {{-- <model-viewer  style="width: 800px; height: 600px;"
-               autoplay ar camera-controls touch-action="pan-y" src="http://localhost:3030/FF2.gltf" scale="0.01 0.01 0.01" alt="A 3D model of a horse galloping.">
+               autoplay ar camera-controls touch-action="pan-y" src="http://localhost:3003/__data/image_02.gltf" scale="0.01 0.01 0.01" alt="A 3D model of a horse galloping.">
   <effect-composer>
     <pixelate-effect></pixelate-effect>
   </effect-composer>
 </model-viewer> --}}
 
-{{-- <model-viewer id="blendViewer" style="width: 800px; height: 600px;" camera-controls touch-action="pan-y" ar src="http://localhost:3030/FF2.gltf" alt="A 3D model of an astronaut">
+
+
+<model-viewer id="blendViewer" style="width: 800px; height: 600px;" camera-controls touch-action="pan-y" ar src="http://localhost:3003/__data/apollo-11-command-module-exterior-3d-model/scene.gltf" alt="A 3D model of an astronaut">
   <effect-composer render-mode="quality" msaa="8">
-    <color-grade-effect contrast="0.5" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+    {{-- <color-grade-effect contrast="0.5" saturation="-1" opacity="1" blend-mode="DIVIDE"></color-grade-effect> --}}
+    <color-grade-effect contrast="0.5" saturation="-1" opacity="1" blend-mode="DIVIDE" tonemapping="ACES_FILMIC" brightness="0" hue="0"></color-grade-effect>
   </effect-composer>
   <div class="controls">
     <label for="opacity">Opacity</label>
@@ -330,9 +333,9 @@
         <option value="negation">Negation</option>
     </select>
   </div>
-</model-viewer> --}}
+</model-viewer>
 
-{{-- <model-viewer id="colorViewer" style="width: 800px; height: 600px;" camera-controls touch-action="pan-y" ar src="http://localhost:3030/FF2.gltf" scale="0.1 0.1 0.1" alt="A 3D model of an astronaut">
+<model-viewer id="colorViewer" style="width: 800px; height: 600px;" camera-controls touch-action="pan-y" ar src="http://localhost:3003/__data/apollo-11-command-module-exterior-3d-model/scene.gltf" scale="0.1 0.1 0.1" alt="A 3D model of an astronaut">
   <effect-composer render-mode="quality" msaa="8">
     <bloom-effect></bloom-effect>
     <color-grade-effect></color-grade-effect>
@@ -349,10 +352,10 @@
         <option value="optimized_cineon">Optimized Cineon</option>
     </select>
   </div>
-</model-viewer> --}}
+</model-viewer>
 
 
-{{-- <model-viewer id="transform" style="width: 800px; height: 600px;"  orientation="20deg 0 0" shadow-intensity="1" camera-controls touch-action="pan-y" ar src="http://localhost:3030/FF2.gltf" alt="A 3D model of an astronaut">
+<model-viewer id="transform" style="width: 800px; height: 600px;"  orientation="20deg 0 0" shadow-intensity="1" camera-controls touch-action="pan-y" ar src="http://localhost:3003/__data/apollo-11-command-module-exterior-3d-model/scene.gltf" alt="A 3D model of an astronaut">
   <div class="controls">
     <div>Roll: <input id="roll" value="20" size="3" class="number"> degrees</div>
     <div>Pitch: <input id="pitch" value="0" size="3" class="number"> degrees</div>
@@ -364,20 +367,20 @@
     </div>
     <button id="frame">Update Framing</button>
   </div>
-</model-viewer> --}}
+</model-viewer>
 
 
-{{-- <model-viewer id="color" style="width: 800px; height: 600px;"  camera-controls touch-action="pan-y" interaction-prompt="none" src="http://localhost:3030/FF2.gltf" ar alt="A 3D model of an astronaut">
+<model-viewer id="color" style="width: 800px; height: 600px;"  camera-controls touch-action="pan-y" interaction-prompt="none" src="http://localhost:3003/__data/apollo-11-command-module-exterior-3d-model/scene.gltf" ar alt="A 3D model of an astronaut">
   <div class="controls" id="color-controls">
-    <button data-color="#ff0000">Red</button>
-    <button data-color="#00ff00">Green</button>
-    <button data-color="#0000ff">Blue</button>
-    <button data-color="#FFFF00">Yellow</button>
+    <button data-color="#ff0000" style="color:#ff0000">Red</button>
+    <button data-color="#00ff00" style="color:#00ff00">Green</button>
+    <button data-color="#0000ff" style="color:#0000ff">Blue</button>
+    <button data-color="#FFFF00" style="color:#FFFF00">Yellow</button>
   </div>
-</model-viewer> --}}
+</model-viewer>
 
 
-{{-- <model-viewer id="sphere" style="width: 800px; height: 600px;"  camera-controls touch-action="pan-y" interaction-prompt="none" src="http://localhost:3030/FF2.gltf" ar alt="A 3D model of a sphere">
+<model-viewer id="sphere" style="width: 800px; height: 600px;"  camera-controls touch-action="pan-y" interaction-prompt="none" src="http://localhost:3003/__data/apollo-11-command-module-exterior-3d-model/scene.gltf" ar alt="A 3D model of a sphere">
   <div class="controls">
     <div>
       <p>Metalness: <span id="metalness-value"></span></p>
@@ -388,7 +391,32 @@
       <input id="roughness" type="range" min="0" max="1" step="0.01" value="0">
     </div>
   </div>
-</model-viewer> --}}
+</model-viewer>
+
+<model-viewer id="neutral-demo" style="width: 800px; height: 600px;" tone-mapping="neutral" camera-controls touch-action="pan-y" auto-rotate alt="A 3D model of a kitchen mixer" src="http://localhost:3003/__data/apollo-11-command-module-exterior-3d-model/scene.gltf">
+  <label for="neutral">Neutral Lighting: </label>
+  <input id="neutral" type="checkbox" checked="true">
+</model-viewer>
+
+
+
+
+<model-viewer id="box" style="width: 800px; height: 600px;" camera-controls touch-action="pan-y" src="http://localhost:3003/__data/apollo-11-command-module-exterior-3d-model/scene.gltf" ar alt="A 3D model of a helmet">
+  <div class="controls">
+      <p>Rotation: <span id="texture-rotation"></span></p>
+      <input type="range" min="0" max="3.14" value="0" step="0.01" id="rotationSlider">
+      <p>Scale: <span id="texture-scale"></span></p>
+      <input type="range" min="0.5" max="1.5" value="1" step="0.01" id="scaleSlider">
+      <p>Offset</p>
+      <input type="range" min="0" max="1" value="0" step="0.01" id="offsetSlider">
+      <p>WrapMode</p>
+      <select id="wrapMode">
+        <option value="10497">Repeat</option>
+        <option value="33071">ClampToEdge</option>
+        <option value="33648">MirroredRepeat</option>
+      </select>
+    </div>
+</model-viewer>
 
 
 {{-- switch example  --}}
@@ -415,103 +443,169 @@
 
 
 <script type="module">
-// const blendViewer = document.querySelector("model-viewer#blendViewer");
-// const blendEffect = blendViewer.querySelector('color-grade-effect');
-// const opacity = blendViewer.querySelector('#opacity');
-// const mode = blendViewer.querySelector('#blend-mode');
+const blendViewer = document.querySelector("model-viewer#blendViewer");
+const blendEffect = blendViewer.querySelector('color-grade-effect');
+const opacity = blendViewer.querySelector('#opacity');
+const mode = blendViewer.querySelector('#blend-mode');
 
-// opacity.addEventListener('input', (e) => blendEffect.opacity = e.target.value);
-// mode.addEventListener('change', (e) => blendEffect.blendMode = e.target.value);
-
-// ----
-
-// const colorViewer = document.querySelector("model-viewer#colorViewer");
-// const colorGradeEffect = colorViewer.querySelector('color-grade-effect');
-// const colorGrading = colorViewer.querySelector('#colorgrading');
-// const tonemapping = colorViewer.querySelector('#tonemapping');
-
-// colorGrading.addEventListener('change', (e) => colorGradeEffect.blendMode = e.target.checked ? 'default' : 'skip');
-// tonemapping.addEventListener('input', (e) => colorGradeEffect.tonemapping = e.target.value);
+opacity.addEventListener('input', (e) => blendEffect.opacity = e.target.value);
+mode.addEventListener('change', (e) => blendEffect.blendMode = e.target.value);
 
 // ----
 
-// const modelViewerTransform = document.querySelector("model-viewer#transform");
-// const roll = document.querySelector('#roll');
-// const pitch = document.querySelector('#pitch');
-// const yaw = document.querySelector('#yaw');
-// const x = document.querySelector('#x');
-// const y = document.querySelector('#y');
-// const z = document.querySelector('#z');
-// const frame = document.querySelector('#frame');
+const colorViewer = document.querySelector("model-viewer#colorViewer");
+const colorGradeEffect = colorViewer.querySelector('color-grade-effect');
+const colorGrading = colorViewer.querySelector('#colorgrading');
+const tonemapping = colorViewer.querySelector('#tonemapping');
 
-// frame.addEventListener('click', () => {
-//   modelViewerTransform.updateFraming();
-// });
+colorGrading.addEventListener('change', (e) => colorGradeEffect.blendMode = e.target.checked ? 'default' : 'skip');
+tonemapping.addEventListener('input', (e) => colorGradeEffect.tonemapping = e.target.value);
 
-// const updateOrientation = () => {
-//   modelViewerTransform.orientation = `${roll.value}deg ${pitch.value}deg ${yaw.value}deg`;
-// };
+// ----
 
-// const updateScale = () => {
-//   modelViewerTransform.scale = `${x.value} ${y.value} ${z.value}`;
-// };
+const modelViewerTransform = document.querySelector("model-viewer#transform");
+const roll = document.querySelector('#roll');
+const pitch = document.querySelector('#pitch');
+const yaw = document.querySelector('#yaw');
+const x = document.querySelector('#x');
+const y = document.querySelector('#y');
+const z = document.querySelector('#z');
+const frame = document.querySelector('#frame');
 
-// roll.addEventListener('input', () => {
-//   updateOrientation();
-// });
-// pitch.addEventListener('input', () => {
-//   updateOrientation();
-// });
-// yaw.addEventListener('input', () => {
-//   updateOrientation();
-// });
-// x.addEventListener('input', () => {
-//   updateScale();
-// });
-// y.addEventListener('input', () => {
-//   updateScale();
-// });
-// z.addEventListener('input', () => {
-//   updateScale();
-// });
+frame.addEventListener('click', () => {
+  modelViewerTransform.updateFraming();
+});
+
+const updateOrientation = () => {
+  modelViewerTransform.orientation = `${roll.value}deg ${pitch.value}deg ${yaw.value}deg`;
+};
+
+const updateScale = () => {
+  modelViewerTransform.scale = `${x.value} ${y.value} ${z.value}`;
+};
+
+roll.addEventListener('input', () => {
+  updateOrientation();
+});
+pitch.addEventListener('input', () => {
+  updateOrientation();
+});
+yaw.addEventListener('input', () => {
+  updateOrientation();
+});
+x.addEventListener('input', () => {
+  updateScale();
+});
+y.addEventListener('input', () => {
+  updateScale();
+});
+z.addEventListener('input', () => {
+  updateScale();
+});
 
 // ---
 
-// const modelViewerColor = document.querySelector("model-viewer#color");
+const modelViewerColor = document.querySelector("model-viewer#color");
 
-// document.querySelector('#color-controls').addEventListener('click', (event) => {
-//   const colorString = event.target.dataset.color;
-//   const [material] = modelViewerColor.model.materials;
-//   material.pbrMetallicRoughness.setBaseColorFactor(colorString);
-// });
+document.querySelector('#color-controls').addEventListener('click', (event) => {
+  const colorString = event.target.dataset.color;
+  const [material] = modelViewerColor.model.materials;
+  material.pbrMetallicRoughness.setBaseColorFactor(colorString);
+});
 
 // ---
 
-// const modelViewerParameters = document.querySelector("model-viewer#sphere");
+const modelViewerParameters = document.querySelector("model-viewer#sphere");
 
-// modelViewerParameters.addEventListener("load", (ev) => {
+modelViewerParameters.addEventListener("load", (ev) => {
 
-//   let material = modelViewerParameters.model.materials[0];
+  let material = modelViewerParameters.model.materials[0];
 
-//   let metalnessDisplay = document.querySelector("#metalness-value");
-//   let roughnessDisplay = document.querySelector("#roughness-value");
+  let metalnessDisplay = document.querySelector("#metalness-value");
+  let roughnessDisplay = document.querySelector("#roughness-value");
 
-//   metalnessDisplay.textContent = material.pbrMetallicRoughness.metallicFactor;
-//   roughnessDisplay.textContent = material.pbrMetallicRoughness.roughnessFactor;
+  metalnessDisplay.textContent = material.pbrMetallicRoughness.metallicFactor;
+  roughnessDisplay.textContent = material.pbrMetallicRoughness.roughnessFactor;
 
-//   // Defaults to gold
-//   material.pbrMetallicRoughness.setBaseColorFactor([0.7294, 0.5333, 0.0392]);
+  // Defaults to gold
+  material.pbrMetallicRoughness.setBaseColorFactor([0.7294, 0.5333, 0.0392]);
 
-//   document.querySelector('#metalness').addEventListener('input', (event) => {
-//     material.pbrMetallicRoughness.setMetallicFactor(event.target.value);
-//     metalnessDisplay.textContent = event.target.value;
-//   });
+  document.querySelector('#metalness').addEventListener('input', (event) => {
+    material.pbrMetallicRoughness.setMetallicFactor(event.target.value);
+    metalnessDisplay.textContent = event.target.value;
+  });
 
-//   document.querySelector('#roughness').addEventListener('input', (event) => {
-//     material.pbrMetallicRoughness.setRoughnessFactor(event.target.value);
-//     roughnessDisplay.textContent = event.target.value;
-//   });
-// });
+  document.querySelector('#roughness').addEventListener('input', (event) => {
+    material.pbrMetallicRoughness.setRoughnessFactor(event.target.value);
+    roughnessDisplay.textContent = event.target.value;
+  });
+
+  console.log(`===`);
+  console.log(modelViewerParameters.model.materials);
+  console.log(modelViewerParameters.model.getMaterialByName('Material'));
+
+  for (let m of modelViewerParameters.model.materials) {
+    console.log(m.emissiveFactor);
+  }
+});
+
+// ---
+
+
+(() => {
+  const modelViewer = document.querySelector('#neutral-demo');
+  const checkbox = document.querySelector('#neutral');
+
+  checkbox.addEventListener('change',() => {
+    modelViewer.environmentImage = checkbox.checked ? '' : 'legacy';
+  });
+})();
+
+// ---
+
+const modelViewerTexture2 = document.querySelector("model-viewer#box");
+const rotationSlider = document.querySelector('#rotationSlider');
+const scaleSlider = document.querySelector('#scaleSlider');
+const offsetSlider = document.querySelector('#offsetSlider');
+
+modelViewerTexture2.addEventListener("load", () => {
+
+  const sampler = modelViewerTexture2.model.materials[0].pbrMetallicRoughness['baseColorTexture'].texture.sampler;
+
+  const rotationDisplay = document.querySelector('#texture-rotation');
+  const scaleDisplay = document.querySelector('#texture-scale');
+
+  rotationDisplay.textContent = rotationSlider.value;
+  scaleDisplay.textContent = scaleSlider.value;
+
+  rotationSlider.addEventListener('input', (event) => {
+    const rotation = rotationSlider.value;
+    sampler.setRotation(rotation);
+    rotationDisplay.textContent = rotation;
+  });
+
+  scaleSlider.addEventListener('input', (event) => {
+    const scale = {
+      u: scaleSlider.value,
+      v: scaleSlider.value
+    };
+    sampler.setScale(scale);
+    scaleDisplay.textContent = scale.x;
+  });
+
+  offsetSlider.addEventListener('input', (event) => {
+    const offset = {
+      u: offsetSlider.value,
+      v: -offsetSlider.value
+    };
+    sampler.setOffset(offset);
+  });
+
+  document.querySelector('#wrapMode').addEventListener('input', (event) => {
+    sampler.setWrapS(Number(event.target.value));
+    sampler.setWrapT(Number(event.target.value));
+  });
+});
 
 // ---
 
